@@ -1,6 +1,6 @@
 
 function getComputerChoice(numchoice){
-    var choice= parseInt(Math.random()*numchoice);
+    let choice= parseInt(Math.random()*numchoice);
     if (choice==0){
         return "Rock";
     }
@@ -12,4 +12,28 @@ function getComputerChoice(numchoice){
     }
        
 }
-console.log(getComputerChoice(3))
+
+function getHumanChoice(){
+
+    const validchoice=["Scissor","Rock","Paper"];
+    
+    try{
+        while(true){
+            let choice= prompt("Please enter your choice: ");
+            if (validchoice.includes(choice)===true)
+            {
+                return choice;
+            }
+            else{
+                throw err;
+            }
+        }
+
+    }
+    catch(err)
+    {
+        console.log("Invalid value");
+        
+    }
+}
+console.log(getHumanChoice());
